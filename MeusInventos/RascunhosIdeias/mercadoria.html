@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <style>
+        body {font: normal 20pt arial; background-color: rgb(166, 166, 224); text-align: center;}
+        input#somar {width:150px; height: 35px; margin-left: 10px; text-align: center;}
+        input {width: 100px; height: 25px; font: normal 15pt arial;}
+        div#res {font: normal 18pt arial;}
+        section { text-align: center; padding: 2px; background-color: white; border-radius: 50px; width: 350px; margin: auto;}
+        footer {font-style: italic; }
+        p#roda { font-style: italic; font-size: 20px;}
+    </style>
+</head>
+<body>
+    <h1>Mercadoria</h1>
+    <section>
+    <p>Valor da compra <input type="number" name="txtn1" id="txtn1"></p>
+    <p>Número de itens <input type="number" name="txtn2" id="txtn2"></p>
+    <p>Gastos gasolina <input type="number" name="txtn3" id="txtn3"></p>
+    <p>Outras despesas <input type="number" name="txtn4" id="txtn4"></p>
+    <p>Qts % de ganho? <input type="number" name="txtn5" id="txtn5"></p>
+    <p><input type="button" value="Gerar" id="somar" onclick="gerar()"></p>
+    <p><div id="res">Resultado aqui</div></p>
+    </section>
+    <script>
+        function gerar() {
+        var tn1 = window.document.getElementById('txtn1')
+        var tn2 = window.document.getElementById('txtn2')
+        var tn3 = window.document.getElementById('txtn3')
+        var tn4 = window.document.getElementById('txtn4')
+        var tn5 = window.document.getElementById('txtn5')
+        var res = window.document.getElementById('res')
+        if (tn1.value == 0 || tn1.value < 0) {
+            alert('[ERRO] Campo em branco ou invalido ')
+        } else {
+        var c1 = Number(tn1.value)
+        var c2 = Number(tn2.value)
+        var c3 = Number(tn3.value)
+        var c4 = Number(tn4.value)
+        var c5 = Number(tn5.value)
+        var r1 = c1 + c3 + c4
+        var r2 = (c1 + c3 + c4) / c2
+        var r3 = (c5 / 100) * r1 + r1
+        var r4 = r3 / c2
+        res.innerHTML = `<p>Valor da unidade: <strong>${r2.toFixed(2)}</strong> reais</p>`
+        res.innerHTML += `<p>O custo total: ${r1.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</p>`        
+        res.innerHTML += `<p> Valor com a porcentagem: ${r3.toLocaleString ('pt-BR', {style: 'currency' , currency: 'BRL'})}</p>`
+        res.innerHTML += `Lucro de: ${r1 - r3.toFixed(2)}`
+        res.innerHTML += `<p>Vai vender por <strong>R$:${r4.toFixed(2)}</strong></p>`
+        res.innerHTML += `<p>\u{1F911} \u{1F911}</p>`
+        }}
+    </script>
+</body>
+<footer>
+    <p>&copy;Carlos Felipe</p>
+    <p id="roda">versão 4.0</p>
+</footer>
+</html>

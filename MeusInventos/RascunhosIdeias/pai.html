@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <style>
+        body {font: normal 20pt arial; background-color: rgb(166, 166, 224); text-align: center;}
+        input#somar {width: 200px; height: 40px; margin-left: 150px;}
+        input {width: 120px; height: 25px; font: normal 18pt arial;}
+        div#res {font: normal 18pt arial;}
+        section {background-color: white; border-radius: 50px; width: 500px; text-align: center; margin: auto;}
+    </style>
+</head>
+<body>
+    <h1>Progama Felipe</h1>
+    <section>
+    <p>Valor da compra <input type="number" name="txtn1" id="txtn1"></p>
+    <p>Qtd de peças <input type="number" name="txtn2" id="txtn2"></p>
+    <p>Valor do frete <input type="number" name="txtn3" id="txtn3"></p>
+    <p>Embalagens <input type="number" name="txtn4" id="txtn4"></p>
+    <p>Qts % de ganho? <input type="number" name="txtn5" id="txtn5"></p>
+    <h2><input type="button" value="somar" id="somar" onclick="somar()"></h2>
+    <p><div id="res">Resultado aqui</div></p>
+    </section>
+    <script>
+        function somar() {
+        var tn1 = window.document.getElementById('txtn1')
+        var tn2 = window.document.getElementById('txtn2')
+        var tn3 = window.document.getElementById('txtn3')
+        var tn4 = window.document.getElementById('txtn4')
+        var tn5 = window.document.getElementById('txtn5')
+        var res = window.document.getElementById('res')
+        var c1 = Number(tn1.value)
+        var c2 = Number(tn2.value)
+        var c3 = Number(tn3.value)
+        var c4 = Number(tn4.value)
+        var c5 = Number(tn5.value)
+        var r1 = c1 + c3 + c4
+        var r2 = c1 / c2 
+        var r3 = (c5 / 100) * r1 + r1
+        res.innerHTML = `<p>Valor da unidade: <strong>${r2.toFixed(2)}</strong> reais</p>`
+        res.innerHTML += `<p>O custo total: ${r1.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</p>`        
+        res.innerHTML += `<p> Valor com a porcentagem: ${r3.toLocaleString ('pt-BR', {style: 'currency' , currency: 'BRL'})}</p>`
+        res.innerHTML += `Lucro de: ${r1 - r3.toFixed(2)}`
+        
+        }
+    </script>
+</body>
+</html>

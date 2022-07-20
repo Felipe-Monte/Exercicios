@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxa Maquineta</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Poppins:wght@300&display=swap');
+body {
+    font: normal 20pt Arial;
+    background-color: #7b2cbf;
+}
+header {
+    color: white;
+    text-align: center;
+}
+header h1 {
+    font-family: 'Poppins', sans-serif;
+}
+section {
+    font-size: 16pt;
+    background-color: white;
+    text-align: center;
+    width: 380px;
+    margin: auto;
+    border-radius: 40px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    padding: 2%;
+} 
+div#div1 {
+    padding: 15px;
+}
+
+p#p1 {
+    margin-top: 1px;
+}
+
+input#txtn1 {
+    width: 80px;
+    font-size: 19px;
+}
+input#botao {
+    width: 85px;
+    font-size: 19px;
+    text-align: center;
+}
+input#botao2 {
+    padding: auto;
+}
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    
+}
+
+    </style>
+</head>
+<body> 
+    <header>
+        <h1>Taxa Maquineta</h1>
+    </header>
+    <section>
+        <div id="div1">
+            Valor:
+                <input type="number" name="numero" id="txtn1" min="0">
+                <input type="button" value="Verificar" onclick="clicar()" id="botao">
+        </div>
+        <div id="res">
+            <p>Faça a simulação</p>      
+        </div> 
+            <p><input type="button" value="NOVO VALOR" id="bota2" onclick="novo()"></p> 
+    </section>
+    
+    <footer>
+        <p>&copy;Carlos Felipe</p> 
+        <p><a href="https://www.instagram.com/felipe_mmonte/" style="color: white;" target="_blank">Instagram</a></p>
+    </footer>
+    <script>
+        function clicar() {   
+ 
+ var num = document.getElementById('txtn1')
+ var res = document.getElementById('res')
+
+  if (num.value.length == 0 || num.value < 0) {
+    alert('[ERRO] Campo em branco ou inválido !')
+    res.innerHTML = `<p>Faça a simulação</p>`
+  } else {
+    var n = Number(num.value)
+    
+    var n1 = (6.38/100 * n)
+    var n2 = (4.36/100 * n) 
+    var n3 = (5.04/100 * n) 
+    var n4 = (5.71/100 * n) 
+    var n5 = (6.39/100 * n) 
+    var n6 = (7.07/100 * n) 
+    var n7 = (7.98/100 * n) 
+    var n8 = (8.68/100 * n) 
+    var n9 = (9.38/100 * n) 
+    var n10 = (10.08/100 * n) 
+    var n11 = (10.77/100 * n) 
+    var n12 = (11.47/100 * n) 
+
+    var r1 = (n-n1)
+    var r2 = (n-n2)
+    var r3 = (n-n3)
+    var r4 = (n-n4)
+    var r5 = (n-n5)
+    var r6 = (n-n6)
+    var r7 = (n-n7)
+    var r8 = (n-n8)
+    var r9 = (n-n9)
+    var r10 = (n-n10)
+    var r11 = (n-n11)
+    var r12 = (n-n12)
+
+    res.style.background = 'white'
+    res.innerHTML = `<p>Seu valor terá um juros de:</p>`
+    res.innerHTML +=`1x:${n} - <strong>${n1.toFixed(2)}</strong>  = ${r1.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`2x:${n} - <strong>${n2.toFixed(2)}</strong> = ${r2.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`3x:${n} - <strong>${n3.toFixed(2)}</strong> = ${r3.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`4x:${n} - <strong>${n4.toFixed(2)}</strong> = ${r4.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`5x:${n} - <strong> ${n5.toFixed(2)}</strong> = ${r5.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`6x:${n} - <strong>${n6.toFixed(2)}</strong> = ${r6.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`7x:${n} - <strong>${n7.toFixed(2)}</strong> = ${r7.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`8x:${n} - <strong>${n8.toFixed(2)}</strong> = ${r8.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`9x:${n} - <strong>${n9.toFixed(2)}</strong> = ${r9.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`10x:${n} - <strong>${n10.toFixed(2)}</strong> = ${r10.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`11x:${n} - <strong>${n11.toFixed(2)}</strong> = ${r11.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`12x:${n} - <strong>${n12.toFixed(2)}</strong> = ${r12.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}<br>`
+    res.innerHTML +=`<p>Valor das taxas em até 12x</p>`
+
+  }
+}
+
+function novo() {
+    var num = document.getElementById('txtn1')
+    if (num.value.length == 0) {
+      alert('[ERRO] Campo em branco !')
+      res.style.background = 'red'
+      res.style.margin = 'auto'
+      res.style.borderRadius = '50px' 
+      
+    } else {
+    res.innerHTML = ''
+    var num = document.getElementById('txtn1').focus()
+    var num = document.getElementById('txtn1').value = ''
+    res.style.background = 'white'
+    }
+
+    res.innerHTML = '<p>Digite o valor !</p>'
+   
+}
+    
+    
+
+    </script>
+</body>
+</html>

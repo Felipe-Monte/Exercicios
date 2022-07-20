@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxa Maquineta</title>
+    <style>
+        body {
+    font: normal 20pt Arial;
+    background-color: rgb(149, 138, 243);
+}
+header {
+    color: white;
+    text-align: center;
+}
+section {
+    background-color: white;
+    text-align: center;
+    width: 750px;
+    margin: auto;
+    border-radius: 25px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    padding: 2%;
+} 
+div#div1 {
+    padding: 15px;
+}
+
+p#p1 {
+    margin-top: 1px;
+}
+
+input#txtn1 {
+    width: 80px;
+    font-size: 19px;
+}
+input#botao {
+    width: 85px;
+    font-size: 19px;
+    text-align: center;
+}
+input#botao2 {
+    padding: auto;
+}
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    
+}
+
+    </style>
+</head>
+<body> 
+    <header>
+        <h1>Taxa Maquineta</h1>
+    </header>
+    <section>
+        <div id="div1">
+            Valor:
+                <input type="number" name="numero" id="txtn1" min="0">
+                <input type="button" value="Verificar" onclick="clicar()" id="botao">
+        </div>
+        <div id="res">
+            <p>Faça a simulação</p>      
+        </div> 
+            <p><input type="button" value="NOVO VALOR" id="bota2" onclick="novo()"></p> 
+    </section>
+    
+    <footer>
+        <p>&copy;Carlos Felipe</p> 
+        <p><a href="https://www.instagram.com/felipe_mmonte/" style="color: white;" target="_blank">Instagram</a></p>
+    </footer>
+    <script>
+        function clicar() {   
+ 
+ var num = document.getElementById('txtn1')
+ var res = document.getElementById('res')
+
+  if (num.value.length == 0 || num.value < 0) {
+    alert('[ERRO] campo em branco ou inválido !')
+    res.innerHTML = `<p>Faça a simulação</p>`
+  } else {
+    var n = Number(num.value)
+    var n1 = (6.38/100) * n + n
+    var n2 = (4.36/100) * n + n
+    var n3 = (5.04/100) * n + n
+    var n4 = (5.71/100) * n + n
+    var n5 = (6.39/100) * n + n
+    var n6 = (7.07/100) * n + n
+    var n7 = (7.98/100) * n + n
+    var n8 = (8.68/100) * n + n
+    var n9 = (9.38/100) * n + n
+    var n10 = (10.08/100) * n + n
+    var n11 = (10.77/100) * n + n
+    var n12 = (11.47/100) * n + n
+
+    res.style.background = 'white'
+    res.innerHTML =`1x:<strong>${n1.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`2x:<strong>${n2.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`3x:<strong>${n3.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`4x:<strong>${n4.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`5x:<strong> ${n5.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`6x:<strong>${n6.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`7x:<strong>${n7.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`8x:<strong>${n8.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`9x:<strong>${n9.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`10x:<strong>${n10.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`11x:<strong>${n11.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`12x:<strong>${n12.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})}</strong><br>`
+    res.innerHTML +=`<p>Valor das taxas em até 12x</p>`
+
+  }
+}
+
+function novo() {
+    var num = document.getElementById('txtn1')
+    if (num.value.length == 0) {
+      alert('[ERRO] campo em branco !')
+      res.style.background = 'red'
+      res.style.width = '200px'
+      res.style.margin = 'auto'
+    } else {
+    res.innerHTML = ''
+    var num = document.getElementById('txtn1').focus()
+    var num = document.getElementById('txtn1').value = ''
+    res.style.background = 'white'
+    }
+
+    res.innerHTML = '<p>Digite o valor !</p>'
+   
+}
+    
+    
+
+    </script>
+</body>
+</html>

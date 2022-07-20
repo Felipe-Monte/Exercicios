@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversariantes</title>
+    <style>
+       
+        body {
+            font-family: 'Arial', Helvetica, sans-serif;
+            background-image: linear-gradient(to bottom ,#95D5B2 ,#74C69D ,#52B788, #40916C);
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #40916C;
+            margin-top: -15px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            width: 350px;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.445);
+            
+        }
+
+        section {
+            background-color: white;
+            width: 320px;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.349);
+        }
+
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        h2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        div > h2 {
+            margin-top: 0px;
+        }
+
+        div > p {
+            margin-bottom: 10px;
+        }
+
+        input#niver {
+            width: 80px;
+        }
+
+        footer {
+            color: white;
+            font-style: italic;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .rodape {
+            color: white;
+            font-size: 13px;
+        }
+
+        p , a {
+            color: rgb(0, 0, 0);
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: rgba(0, 0, 0, 0.24);
+        }
+
+        a:active {
+            color: yellow;
+        }
+   
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Niver Am Monte</h1>
+    </header>
+        <hr>
+    <section>
+        <div>
+            <h2>Qual mês deseja consultar ?</h2>
+            <input type="number" name="tnumber" id="niver" min="1" max="12" placeholder="Ex:1,2,3">
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+
+        <div id="res">
+            <p>&#x1F388 &#x1F388</p>
+        </div>
+    </section>
+
+    <footer>
+        <p class="rodape">Desenvolvido por &copy;Carlos Felipe</p>
+        <p class="rodape"><a href="https://www.facebook.com/carlosfelipemonte.felipe" target="_blank">Facebook</a> | <a href="https://www.instagram.com/felipe_mmonte/" target="_blank">Instagram</a></p>
+    </footer>
+    <script>
+        var texto = document.getElementById('niver')
+        var res = document.getElementById('res')
+        /* Fazer pelo nome e pelo mes das pessoas */
+
+    function verificar() {    
+        
+        if (texto.value == 0 || texto.value > 12 || texto.value < 0)  {
+            alert('[ERRO] Campo em branco ou invalido !')
+            res.innerHTML = `<br>Coloque o mês válido !`
+
+        } else if (texto.value == 1 ){
+            res.innerHTML = `<br><b>JANEIRO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/juliene4403/" target="_blank">08/01 - Juliene</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 2) {
+            res.innerHTML = `<br><b>FEVEREIRO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/clailson.silva.37/" target="_blank">02/02 - Kaká</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 3) {
+            res.innerHTML = `<br><b>MARÇO:</b><br><br>`
+            res.innerHTML += `03 - [Cadastrar Pessoa]<br>`
+            texto.focus()
+
+        } else if (texto.value == 4) {
+            res.innerHTML = `<br><b>ABRIL:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/ojoaobatista10/" target="_blank">23/04 - João Batista</a><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/felipe_mmonte/" target="_blank">29/04 - Felipe</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 5) {
+            res.innerHTML = `<br><b>MAIO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="#">05/05 - Aldo Alves</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 6) {
+            res.innerHTML = `<br><b>JUNHO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/anita.ferreira.9022/" target="_blank">17/06 - Ana Maria</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 7) {
+            res.innerHTML = `<br><b>JULHO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="#">29/07 - Cléia</a><br>`
+            texto.focus()
+ 
+        } else if (texto.value == 8) {
+            res.innerHTML = `<br><b>AGOSTO:</b><br><br>`
+            res.innerHTML += `08 - [Cadastrar Pessoa]<br>`
+            texto.focus()
+
+        } else if (texto.value == 9) {
+            res.innerHTML = `<br><b>SETEMBRO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/linda_montte/" target="_blank">09/09 - Cleuda Maria</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 10) {
+            res.innerHTML = `<br><b>OUTUBRO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/gustavocardoso19/" target="_blank">04/10 - Gustavo</a><br>`
+            res.innerHTML += `&#x1F388 <a href="https://www.instagram.com/tica.silveira/" target="_blank">21/10 - Tica</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 11) {
+            res.innerHTML = `<br><b>NOVEMBRO:</b><br><br>`
+            res.innerHTML += `&#x1F388 <a href="#">17/11 - Jonatas</a><br>`
+            res.innerHTML += `&#x1F388 <a href="#">30/11 - Ademar</a><br>`
+            texto.focus()
+
+        } else if (texto.value == 12) {
+            res.innerHTML = `<br><b>DEZEMBRO:</b><br><br>`
+            res.innerHTML += `12 - [CADASTRAR]<br>`
+            texto.focus()
+
+        } 
+    }
+    </script>
+</body>
+</html>
