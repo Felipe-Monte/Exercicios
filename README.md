@@ -1,3 +1,3 @@
 # Exercicios
 Treinando
-javascript, html e css !
+💻 javascript, html e css !
