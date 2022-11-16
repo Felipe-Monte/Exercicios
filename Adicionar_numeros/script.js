@@ -1,26 +1,46 @@
-let txt1 = document.getElementById('txtn')
-let select = document.getElementById('sel')
-let res = document.getElementById('res')
+var num = document.getElementById('txtn')
+var selectList = document.getElementById('sel')
+var res = document.getElementById('res')
+
+var vetor = []
+
+function isNumber(n) {
+    if (Number(n) >= 1 && Number(n) <= 100) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function inLista(n, v) {
+    if (v.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
 
 function adicionar() {
-    let n = Number(txt1.value)
+    if (isNumber(num.value) && !inLista(num.value, vetor)) {
+        vetor.push(Number(num.value))
+        
+        var item = document.createElement('option')
+        item.text = `O valor ${num.value} foi adicionado`
+        selectList.appendChild(item)
 
-    if (txt1.value.length == 0 || txt1.value > 100) {
-        alert('[ERRO] em branco ou maior que 100')
-    } else {        
-        let num = [n]
-        num.push(n)
-        let item = document.createElement('option')
-        item.text = `valor ${n} adicionado`
-        select.appendChild(item)
+        num.focus()
+        num.value = ''
 
-     }   
+    } else {
+        alert('Error, numero invalido ou ja adicionado a lista')
+    }
 }
+
 function finalizar() {
-      
-      res.innerHTML = `<p>O maior valor cadastrado foi:</p>`  
-      res.innerHTML += `<p>O menor valor foi:</p>`
-      res.innerHTML += `<p>Somando todos os valores temos:</p>`
-      res.innerHTML += `<p>A média de valores digitado é:</p>`
-      res.innerHTML += `${num}`
+    if (vetor.length == 0) {
+        alert('Lista vazia')
+    } else {
+        res.innerHTML = `<p>Total de itens é ${vetor.length}</p>`
+    }
 }
